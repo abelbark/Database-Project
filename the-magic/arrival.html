@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrival</title>
+
+    <style>
+         body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cornsilk;
+            height: 100vh;
+            margin: 0;
+         }
+
+         .welcome-header{
+             display: flex;
+             height: 100vh;
+             position: fixed;
+         }
+
+         .crowd-container{
+             flex-grow: 1;
+             display: flex;
+             justify-content: center;
+             align-items: flex-end;
+             width: 100%;
+             overflow: hidden;
+         }
+
+         #crowd{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+         }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="welcome-header">
+        <h1>Welcome!!</h1>
+    </div>
+    <!--check if the user is logged in-->
+ 
+    <div class="crowd-container">
+        <img src="https://media1.giphy.com/media/35AZzA7QYVyxhvnGU6/giphy.gif?cid=6c09b952o0fek76twqaqi64msv0nwuumuim6nm4an7urngsu&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s"
+         id="crowd" name="crowd-cheer">
+    </div>
+    
+</body>
+</html>
