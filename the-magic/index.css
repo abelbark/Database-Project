@@ -1,0 +1,118 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornsilk;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.Container{
+    display: flex;
+    flex-direction: column;
+    border: 15px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    width: 400px;
+    padding: 20px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*#bill-nye{
+    position: absolute;
+    padding-left: 135px;
+    top: 5%;
+    width: 10%;
+}*/
+
+#login-header{
+    font-family: 'Gondrin', sans-serif;
+    font-size: 25px;
+    padding-left: 1.5em;
+    cursor: pointer;
+}
+
+#register-header{
+    font-family: 'Gondrin', sans-serif;
+    font-size: 25px;
+    padding-right: 1.5em;
+    cursor: pointer;
+}
+
+#login-box{
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#login-box input{
+    border-style: none;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    background-color: rgb(203, 221, 240);
+    border-bottom: thick black dashed;
+}
+
+#login-box #sign-in{
+    border: none;
+    background-color: rgb(245, 231, 231);
+    border-style: inset;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+
+}
+
+#register-box #sign-up{
+    border: none;
+    background-color: rgb(245, 231, 231);
+    border-style: inset;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+
+}
+
+#register-box input{
+    border-style: none;
+    background-color: rgb(203, 221, 240);
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    border-bottom: thick black dashed;
+}
+
+#register-box{
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.welcome-header{
+    display: flex;
+    height: 100vh;
+    position: fixed;
+}
+
+.crowd-container{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    overflow: hidden;
+}
+
+#crowd{
+position: absolute;
+width: 100%;
+bottom: 0;
+left: 0;
+right: 0;
+}
