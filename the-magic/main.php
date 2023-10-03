@@ -2,7 +2,7 @@
 <?php 
     
     include "signup.php";
-
+    include "signin.php";
 ?>
 
 <!DOCTYPE html>
@@ -98,16 +98,19 @@
 
             <!-- login Form -->
             <div id="login-box">
-                <input type="text" 
-                       id="email" 
-                       placeholder="Email" 
-                       name="email"><br>
-                <input type="text"
-                       id="password"
-                       placeholder="Password"
-                       name="password"><br>
+                <form action="signin.php" method="post">
+                    <input type="text" 
+                        id="email" 
+                        placeholder="Email" 
+                        name="email"
+                        value="<?= htmlspecialchars($_POST["email"] ?? "") ?>"><br>
+                    <input type="text"
+                        id="password"
+                        placeholder="Password"
+                        name="password"><br>
 
-                <input type="submit" id="sign-in" value="Sign In">
+                    <input type="submit" id="sign-in" value="Sign In">
+                </form>
             </div>
 
             <!-- SignUp form-->
