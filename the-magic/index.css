@@ -23,12 +23,6 @@ body{
     justify-content: space-between;
 }
 
-/*#bill-nye{
-    position: absolute;
-    padding-left: 135px;
-    top: 5%;
-    width: 10%;
-}*/
 
 #login-header{
     font-family: 'Gondrin', sans-serif;
@@ -44,19 +38,33 @@ body{
     cursor: pointer;
 }
 
-#login-box{
-    flex-direction: column;
+.login-input,
+.register-input {
     display: flex;
-    gap: 10px;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#login-box input{
+.login-input input,
+.register-input input {
     border-style: none;
     font-family: 'Times New Roman', Times, serif;
     color: black;
     background-color: rgb(203, 221, 240);
     border-bottom: thick black dashed;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#login-box{
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    width: 100%;
 }
 
 #login-box #sign-in{
@@ -79,13 +87,7 @@ body{
 
 }
 
-#register-box input{
-    border-style: none;
-    background-color: rgb(203, 221, 240);
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
-    border-bottom: thick black dashed;
-}
+
 
 #register-box{
     flex-direction: column;
@@ -110,9 +112,9 @@ body{
 }
 
 #crowd{
-position: absolute;
-width: 100%;
-bottom: 0;
-left: 0;
-right: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
