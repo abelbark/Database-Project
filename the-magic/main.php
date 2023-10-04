@@ -1,4 +1,3 @@
-
 <?php 
     
     include "signup.php";
@@ -99,17 +98,19 @@
             <!-- login Form -->
             <div id="login-box">
                 <form action="signin.php" method="post">
-                    <input type="text" 
-                        id="email" 
-                        placeholder="Email" 
-                        name="email"
-                        value="<?= htmlspecialchars($_POST["email"] ?? "") ?>"><br>
-                    <input type="text"
-                        id="password"
-                        placeholder="Password"
-                        name="password"><br>
+                    <div class="login-input">
+                        <input type="text" 
+                            id="email" 
+                            placeholder="Email" 
+                            name="email"
+                            value="<?= htmlspecialchars($_POST["email"] ?? "") ?>"><br>
+                        <input type="text"
+                            id="password"
+                            placeholder="Password"
+                            name="password"><br>
 
-                    <input type="submit" id="sign-in" value="Sign In">
+                        <input type="submit" id="sign-in" value="Sign In">
+                    </div>
                 </form>
             </div>
 
@@ -154,3 +155,4 @@
 
 </body>
 </html>
+
