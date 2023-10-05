@@ -1,3 +1,18 @@
+
+<?php
+    session_start();
+
+    if(isset($_SESSION["first-name"])){
+
+        $firstName = $_SESSION["first-name"];
+
+    } else {
+
+        header('Location: main.php');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +25,10 @@
 <body>
 
     <div class="welcome-header">
-        <h1>Welcome!!</h1>
+        <h1>Welcome <?php echo $firstName; ?></h1>
     </div>
+
+    
     <!--check if the user is logged in-->
  
     <div class="crowd-container">
@@ -21,3 +38,4 @@
     
 </body>
 </html>
+
