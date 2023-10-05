@@ -11,13 +11,16 @@
         $user = $result->fetch_assoc();
 
         if($user and password_verify($_POST["password"], $user["password"])){
-            $first = $user["firstName"];
-            die("Hello $first"); 
+
+            session_start();
+            $_SESSION['first-name'] = $user["firstName"];
+            header('Location: arrival.php');
+            exit();
+
         }else{
             die("Invalid Login");
-        }
-
-        
+        }      
         
     }
 ?>
+
