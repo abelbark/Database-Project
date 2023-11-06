@@ -15,7 +15,10 @@ body{
     border: 15px solid rgb(243, 190, 56);
     border-style: groove;
     background: rgb(203, 221, 240);
-    width: 400px;
+    width: 23vw;
+    min-width: 200px;
+    height: 50vh;
+    min-height: 400px;
     padding: 20px;
 }
 
@@ -82,6 +85,57 @@ body{
     cursor: pointer;
     padding: 10px 20px;
     outline: none;
+}
 
+.search{
+    position: fixed;
+    display: inline-block;
+    overflow-x: hidden;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 15px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    padding: 20px;
+}
+
+.search input{
+    width: 20vw;
+    padding: 6px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.search button{
+    float: right;
+    padding: 6px 10px;
+    margin-top: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+table {
+  width: 70vw;
+  margin: 20px;
+  border: 5px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+.back{
+    position: absolute;
+    display: inline;
+    left: 50px;
+    top: 40px;
+    border: 5px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
 }
 

@@ -1,7 +1,7 @@
 
 <?php
     $posted = false;
-     error_reporting(E_ALL);
+    error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
     session_start();
@@ -9,7 +9,6 @@
     if(isset($_SESSION["first-name"])){
 
         $firstName = $_SESSION["first-name"];
-
         if($_SERVER["REQUEST_METHOD"] === "POST"){
             if(empty($_POST['item-name']) || empty($_POST['item-category']) ||
                empty($_POST['item-price']) || empty($_POST['item-description'])){
@@ -73,6 +72,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/gondrin" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="item.css">
     <title>Arrival</title>
 
@@ -113,6 +113,13 @@
             
         }
 
+        function hideArrivalContainer(){
+            document.getElementById("container").style.display="none";
+        }
+
+        function showArrivalContainer(){
+            document.getElementById("container").style.display="flex";
+        }
 
         window.addEventListener("load", init);
     </script>
@@ -126,7 +133,13 @@
         // $posted = false;
     }
     ?>
-    <div class="arrival-container">
+    <div class="search">
+        <form method="post" action="search.php">
+            <input type="text" name="search" placeholder="Search">
+            <button type="submit" value="submit" ><i class='bx bx-search'></i></button>
+        </form>
+    </div>
+    <div class="arrival-container" id="container">
         
 
         <div class="header-container">
