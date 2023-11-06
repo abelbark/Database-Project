@@ -12,6 +12,7 @@ body{
 .arrival-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 15px solid rgb(243, 190, 56);
     border-style: groove;
     background: rgb(203, 221, 240);
@@ -138,4 +139,26 @@ td, th {
     border-style: groove;
     background: rgb(203, 221, 240);
 }
+.menu{
+   margin-left: 50px;
+   border: 5px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240)
+}
 
+.init{
+    padding: 10px;
+    
+}
+
+#init{
+    border: none;
+    background-color: rgb(245, 231, 231);
+    border-style: inset;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}

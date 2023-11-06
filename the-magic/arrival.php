@@ -10,7 +10,11 @@
 
         $firstName = $_SESSION["first-name"];
         if($_SERVER["REQUEST_METHOD"] === "POST"){
-            if(empty($_POST['item-name']) || empty($_POST['item-category']) ||
+            if(isset($_POST['initialize'])){
+                 $mysqli = require "database.php";
+                 $query = "INSERT INTO item(Title, Description, Category, Price) VALUES ('Banana', 'Yellow afd', 'Food', '0.99'), ('USB-C cable', 'Connect usbc to usbc', 'Accessory', '9.99'), ('Antenna', 'nice antenna', 'Electronic', '19.99'), ('Apple', 'One of these a day keeps the doctor away', 'Food', '2.99'), ('Lipstick','Red', 'Cosmetic', '5.99'), ('Chips','Hot and spicy', 'Food', '3.99'), ('Headset','This gaming headset has rgb lights', 'Electronic', '54.99'), ('USB Hub','This lets you connect to multiple devices', 'Accessory', '29.99'), ('Wig','This is an all natural blue wig', 'Cosmetic', '99.99'), ('Pineapple','This is the most ripe and sweet pinapple ever', 'Food', '4.99'), ('Speakers','These speakers have strong bass', 'Electronic', '399.99')";
+                 $mysqli->query($query);
+            }else if(empty($_POST['item-name']) || empty($_POST['item-category']) ||
                empty($_POST['item-price']) || empty($_POST['item-description'])){
     
                    die("fill in the fields!!!");
@@ -175,6 +179,15 @@
             </div>
         </div>
     </div>
+    <div class="menu" id="menu">
+        <div class="header-container">
+            <h3 id="create-header">Initialize Database</h3>
+        </div>
+        <form action="arrival.php" method="post">
+        <input type="submit" name="initialize" id="init" value="Initialize Database">
+        </form>
+    </div>
+    
     
 </body>
 </html>
