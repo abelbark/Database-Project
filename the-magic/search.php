@@ -11,7 +11,7 @@
         if(isset($_POST['search'])){
             $mysqli = require "database.php";
             $searchq = $_POST['search'];
-            $query = "SELECT * FROM item WHERE Description LIKE '%{$searchq}%' OR Title LIKE '%{$searchq}%';";
+            $query = "SELECT * FROM item WHERE Category LIKE '%{$searchq}%' OR Title LIKE '%{$searchq}%';";
             $result = $mysqli->query($query);
             $resultCheck = mysqli_num_rows($result);
             if($resultCheck > 0){
