@@ -8,12 +8,15 @@
 
         $result = $mysqli->query($sql);
 
+        if($result === false){
+            die("Query error: " . $mysqli->error);
+        }
+
         $user = $result->fetch_assoc();
 
         if($user and password_verify($_POST["password"], $user["password"])){
-
             session_start();
-            $_SESSION['first-name'] = $user["firstName"];
+            $_SESSION['user-name'] = $user["username"];
             header('Location: arrival.php');
             exit();
 
