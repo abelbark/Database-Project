@@ -1,72 +1,94 @@
-
 <?php
     $posted = false;
+    $postsExceeded = false;
+    $redirectBack = false;
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
     session_start();
-    
-    if(isset($_SESSION["first-name"])){
 
-        $firstName = $_SESSION["first-name"];
-        if($_SERVER["REQUEST_METHOD"] === "POST"){
-            if(isset($_POST['initialize'])){
-                 $mysqli = require "database.php";
-                 $query = "INSERT INTO item(Title, Description, Category, Price) VALUES ('Banana', 'Yellow afd', 'Food', '0.99'), ('USB-C cable', 'Connect usbc to usbc', 'Accessory', '9.99'), ('Antenna', 'nice antenna', 'Electronic', '19.99'), ('Apple', 'One of these a day keeps the doctor away', 'Food', '2.99'), ('Lipstick','Red', 'Cosmetic', '5.99'), ('Chips','Hot and spicy', 'Food', '3.99'), ('Headset','This gaming headset has rgb lights', 'Electronic', '54.99'), ('USB Hub','This lets you connect to multiple devices', 'Accessory', '29.99'), ('Wig','This is an all natural blue wig', 'Cosmetic', '99.99'), ('Pineapple','This is the most ripe and sweet pinapple ever', 'Food', '4.99'), ('Speakers','These speakers have strong bass', 'Electronic', '399.99')";
-                 $mysqli->query($query);
-            }else if(empty($_POST['item-name']) || empty($_POST['item-category']) ||
-               empty($_POST['item-price']) || empty($_POST['item-description'])){
-    
-                   die("fill in the fields!!!");
-    
+    if (isset($_SESSION["user-name"])) {
+
+        $userName = $_SESSION["user-name"];
+
+        $mysqli = require "database.php";
+
+        // Get the current date in the correct format
+        $date = date('Y-m-d');
+
+        // Check the number of posts for the current user on the current date
+        $sqlCheckLimit = "SELECT COUNT(*) AS post_count FROM item
+        WHERE username = ? AND DATE_FORMAT(NOW(), '%Y-%m-%d') = ?"; // Use NOW() to get the current date
+
+        $stmtCheckLimit = $mysqli->prepare($sqlCheckLimit);
+        $stmtCheckLimit->bind_param("ss", $userName, $date);
+        $stmtCheckLimit->execute();
+        $resultCheckLimit = $stmtCheckLimit->get_result();
+        $row = $resultCheckLimit->fetch_assoc();
+        $postCountToday = $row["post_count"];
+
+        $stmtCheckLimit->close();
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            if (empty($_POST['item-name']) || empty($_POST['item-category']) ||
+                empty($_POST['item-price']) || empty($_POST['item-description'])) {
+                die("Fill in all the fields!");
             } else {
-    
-                $mysqli = require "database.php";
-    
-                $sql = "INSERT INTO item(Title, Category, Price, Description)
-                        VALUES (?, ?, ?, ?)";
-    
-                $stmt = $mysqli->stmt_init();
-    
-                if(!$stmt->prepare($sql)){
-                    die("SQL error: " . $mysqli->error);
+
+                if ($postCountToday >= 3) {
+                    $postsExceeded = true;
+                    $redirectBack = true;
                 }
-    
-                $price = floatval($_POST["item-price"]);
-    
-                $stmt->bind_param("ssds", 
-                $_POST["item-name"],
-                $_POST["item-category"],
-                $price,
-                $_POST["item-description"]);
-    
-                if($stmt->execute()){
-                   $posted = true;
-                } else {
-    
-                    die($mysqli->error . " " . $mysqli->errno);
-    
+                else {
+                    // Prepare the INSERT statement
+                    $sql = "INSERT INTO item(Title, Category, Price, Description, username)
+                        VALUES (?, ?, ?, ?, ?)";
+
+                    $stmt = $mysqli->prepare($sql);
+
+                    if (!$stmt) {
+                        die("SQL error: " . $mysqli->error);
+                    }
+
+                    $price = floatval($_POST["item-price"]);
+
+                    $stmt->bind_param("ssdss", 
+                        $_POST["item-name"],
+                        $_POST["item-category"],
+                        $price,
+                        $_POST["item-description"],
+                        $userName
+                    );
+
+                    if ($stmt->execute()) {
+                        $posted = true;
+                    } else {
+                        die($mysqli->error . " " . $mysqli->errno);
+                    }
                 }
-    
-    
-    
+
             }
         }
-
     } else {
-
         header('Location: main.php');
         exit();
     }
 
-    //logs out the user from the page
-    if(isset($_GET["logout"])){
-
+    // Log out the user from the page
+    if (isset($_GET["logout"])) {
         session_destroy();
         header("Location: main.php");
         exit;
     }
 
+    if($redirectBack){
+        //header("arrival.php");
+        echo "<script type= 'text/javascript'>
+                alert('You Hit Your Daily Limit!');
+                window.location.href = 'arrival.php';
+              </script>";
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -126,16 +148,18 @@
         }
 
         window.addEventListener("load", init);
+
+
     </script>
 
 
 </head>
 <body>
     <?php
-    if( $posted ) {
-        echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
-        // $posted = false;
-    }
+        if($posted) {
+            echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
+            // $posted = false;
+        }
     ?>
     <div class="search">
         <form method="post" action="search.php">
@@ -151,7 +175,7 @@
         </div>
 
         <div class="input-form">
-            <!-- SignUp form-->
+            <!-- Item form-->
             <div id="item-box">
                 <form action="arrival.php" method="post">
                     <div class="item-input">
@@ -179,15 +203,6 @@
             </div>
         </div>
     </div>
-    <div class="menu" id="menu">
-        <div class="header-container">
-            <h3 id="create-header">Initialize Database</h3>
-        </div>
-        <form action="arrival.php" method="post">
-        <input type="submit" name="initialize" id="init" value="Initialize Database">
-        </form>
-    </div>
-    
     
 </body>
 </html>
