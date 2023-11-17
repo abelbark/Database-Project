@@ -3,10 +3,10 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    $host = "my440cluster.cevb6hoe2jwx.us-east-2.rds.amazonaws.com";
-    $dbname = "440Group";
+    $host = "database-design-proj.cvum0af99fvy.us-east-2.rds.amazonaws.com";
+    $dbname = "Comp440Proj";
     $username = "admin";
-    $password = "somepassword";
+    $password = "Mysql123";
 
     $mysqli = new mysqli($host, $username, $password, $dbname);
     $mysqli->autocommit(true);
