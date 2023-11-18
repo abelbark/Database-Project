@@ -1,114 +1,31 @@
-
-body{
+body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     background-color: cornsilk;
-    height: 100vh;
     margin: 0;
-
+    padding-top: 30px;
 }
 
-.arrival-container{
+.search {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 15px solid rgb(243, 190, 56);
-    border-style: groove;
-    background: rgb(203, 221, 240);
-    width: 23vw;
-    min-width: 200px;
-    height: 50vh;
-    min-height: 400px;
-    padding: 20px;
-}
-
-.header-container{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-#create-header{
-    font-family: 'Gondrin', sans-serif;
-    font-size: 25px;
-    text-align: center;
-    cursor: pointer;
-}
-
-
-
-.item-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-
-.item-input input {
-    border-style: none;
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
-    background-color: rgb(203, 221, 240);
-    border-bottom: thick black dashed;
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-.item-input textarea{
-    border: 5px black dashed;
-    /*border-style: none;*/
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
-    background-color: rgb(203, 221, 240);
-    /*border-bottom: thick black dashed;*/
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-
-#item-box{
-    flex-direction: column;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-}
-
-#item-box #create{
-    border: none;
-    background-color: rgb(245, 231, 231);
-    border-style: inset;
-    cursor: pointer;
-    padding: 10px 20px;
-    outline: none;
-}
-
-.search{
-    position: fixed;
-    display: inline-block;
-    overflow-x: hidden;
-    top: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
+    flex-shrink: 0; /* Prevent the search bar from shrinking */
     border: 15px solid rgb(243, 190, 56);
     border-style: groove;
     background: rgb(203, 221, 240);
     padding: 20px;
 }
 
-.search input{
+.search input {
     width: 20vw;
     padding: 6px;
     margin-top: 5px;
     font-size: 15px;
 }
 
-.search button{
+.search button {
     float: right;
     padding: 6px 10px;
     margin-top: 5px;
@@ -116,21 +33,28 @@ body{
     cursor: pointer;
 }
 
+.list-items {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
 table {
-  width: 70vw;
-  margin: 20px;
-  border: 5px solid rgb(243, 190, 56);
+    width: 70vw;
+    margin: 20px auto;
+    border: 5px solid rgb(243, 190, 56);
     border-style: groove;
     background: rgb(203, 221, 240);
+    padding: 20px;
 }
 
 td, th {
-  border: 1px solid #000000;
-  text-align: left;
-  padding: 8px;
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
 }
 
-.back{
+.back {
     position: absolute;
     display: inline;
     left: 50px;
@@ -139,26 +63,25 @@ td, th {
     border-style: groove;
     background: rgb(203, 221, 240);
 }
-.menu{
-   margin-left: 50px;
-   border: 5px solid rgb(243, 190, 56);
-    border-style: groove;
-    background: rgb(203, 221, 240)
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  
 }
 
-.init{
-    padding: 10px;
-    
+.pagination a {
+    padding: 8px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ddd;
+    border-radius: 5px;
 }
 
-#init{
-    border: none;
-    background-color: rgb(245, 231, 231);
-    border-style: inset;
-    cursor: pointer;
-    padding: 10px 20px;
-    outline: none;
-    font-size: 25px;
-    text-align: center;
-    cursor: pointer;
+.pagination a:hover {
+    background-color: #555;
+    color: white;
 }
+
