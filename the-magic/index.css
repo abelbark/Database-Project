@@ -8,7 +8,9 @@ body{
     margin: 0;
 
 }
-
+button, input[type="submit"]{
+    cursor: pointer;
+}
 .Container{
     display: flex;
     flex-direction: column;
