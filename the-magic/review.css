@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornsilk;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.back {
+    position: absolute;
+    display: inline;
+    left: 50px;
+    top: 40px;
+    border: 5px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    cursor: pointer;
+}
+
+.item-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent the search bar from shrinking */
+    border: 15px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    padding: 20px;
+    text-align: center;
+
+}
+
+.review-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  
+}
