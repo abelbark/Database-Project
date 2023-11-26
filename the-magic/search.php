@@ -75,7 +75,9 @@ if (isset($_SESSION["user-name"])) {
         echo '<div class="list-items"> <table><tr><th>Title</th><th>Category</th><th>Price</th><th>Description</th></tr>';
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>';
-            echo '<td>' . (isset($row['title']) ? $row['title'] : '') . '</td>';
+            echo '<td><a href="Reviewfunction.php?itemID=' . $row['itemID'] . '">';
+            echo (isset($row['title']) ? $row['title'] : '');
+            echo '</a></td>';
             echo '<td>' . (isset($row['category']) ? $row['category'] : '') . '</td>';
             echo '<td>' . (isset($row['price']) ? $row['price'] : '') . '</td>';
             echo '<td>' . (isset($row['description']) ? $row['description'] : '') . '</td>';
@@ -89,7 +91,7 @@ if (isset($_SESSION["user-name"])) {
             if ($i == $currentPage) {
                 echo "<span> $i</span>";
             } else {
-                echo "<a href='search.php?page=$i&search=" . urlencode($searchq) . "'>, $i </a>";
+                echo "<a href='search.php?page=$i&search=" . urlencode($searchq) . "'> $i </a>";
             }
         }
         echo '</div>';
@@ -100,3 +102,6 @@ if (isset($_SESSION["user-name"])) {
     ?>
 </body>
 </html>
+
+
+
