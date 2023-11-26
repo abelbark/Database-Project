@@ -10,7 +10,7 @@ body {
     cursor: pointer;
  }
  
-.search {
+.search, #item-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,8 @@ body {
     padding: 20px;
 }
 
-.search input {
+.search input,
+#item-box input {
     width: 20vw;
     padding: 6px;
     margin-top: 5px;
@@ -88,4 +89,5 @@ td, th {
     background-color: #555;
     color: white;
 }
+
 
