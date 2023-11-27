@@ -4,6 +4,11 @@
     ini_set('display_errors', 1);
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
+        $mysqli = require "database.php";
+        $user = $_POST['user-name'];
+        $sql = "SELECT * FROM user WHERE '%{$user}%' = username;";
+        $result = $mysqli->query($sql);
+        $resultCheck = mysqli_num_rows($result);
         if(empty($_POST['user-name']) || empty($_POST['user-email']) ||
            empty($_POST['first-name']) || empty($_POST['last-name']) ||
            empty($_POST['user-password']) || empty($_POST["confirm-password"])){
@@ -17,6 +22,10 @@
         } elseif(strlen($_POST["user-password"]) < 6){
 
                die("password is invalid");
+
+        } elseif( $resultCheck > 0 ){
+            
+            die("username already exists");
 
         } else {
             $new_password = password_hash($_POST["user-password"], PASSWORD_DEFAULT);
