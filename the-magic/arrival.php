@@ -165,6 +165,12 @@
         <form action="arrival.php" method="post">
             <input type="submit" name="initialize" id="init" value="Initialize Database">
         </form>
+        <div class="header-container">
+            <h3 id="create-header">Phase 3</h3>
+        </div>
+        <form action="./phase-3/phase3.php" method="post">
+            <input type="submit" name="phase3" value="phase 3">
+        </form>
     </div>
     <script>
         <?php

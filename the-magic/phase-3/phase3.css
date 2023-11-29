@@ -1,0 +1,38 @@
+body {
+    background-color: cornsilk;
+    margin: 0;
+    padding: 20px;
+}
+button, input[type="submit"]{
+    cursor: pointer;
+}
+
+.back{
+    display: inline-block;
+    left: 50px;
+    top: 40px;
+    border: 5px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.container{
+    border: 15px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    margin: 0px auto;
+    width: 40%;
+    height: 75vh;
+}
+
+.phase3buttons{
+   border: 5px solid rgb(243, 190, 56);
+    border-style: groove;
+    background: rgb(203, 221, 240);
+    margin: 15px;
+}
+.forms{
+    width: 100%;
+}
