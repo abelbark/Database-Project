@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number 8</title>
+    <title>8</title>
 </head>
 <body>
     <h1>8) Users who posted some reviews but each of them is "poor"</h1>

@@ -1,0 +1,9 @@
+*{
+    font-size: 1.1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 1.5rem;
+}
+
+li{
+    border-bottom: 1px solid black;
+}

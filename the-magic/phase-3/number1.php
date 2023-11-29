@@ -1,0 +1,38 @@
+<?php
+    $mysqli = require __DIR__ . '/../database.php';
+
+    $sql = "WITH RankedItems AS (
+                SELECT *, ROW_NUMBER() OVER (PARTITION BY category ORDER BY price DESC) AS ranking
+                FROM item 
+                )
+                SELECT *
+                FROM RankedItems
+                WHERE ranking = 1;";
+    
+    $result = $mysqli->query($sql);
+
+    if($result){
+        $users = $result->fetch_all(MYSQLI_ASSOC);
+    } else{
+        die ($mysqli->error);
+    }
+
+    $mysqli->close();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>1</title>
+</head>
+<body>
+    <h1></h1>
+    <ul>
+        <?php  foreach($users as $user): ?>
+            <li><?= "Category: " . $user['category'] . " | " . "Title: " . $user['title'] . " | Price: " . $user['price'] ?></li>
+        <?php  endforeach; ?>
+    </ul>
+</body>
+</html>
