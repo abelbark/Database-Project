@@ -28,7 +28,12 @@
     <title>1</title>
 </head>
 <body>
-    <h1></h1>
+    <script>
+        function goBack() {
+            location.href = 'phase3.php';
+        }
+    </script>
+    <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>
     <ul>
         <?php  foreach($users as $user): ?>
             <li><?= "Category: " . $user['category'] . " | " . "Title: " . $user['title'] . " | Price: " . $user['price'] ?></li>

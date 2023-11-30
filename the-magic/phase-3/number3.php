@@ -30,9 +30,15 @@ if (empty($_GET['search'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>2</title>
+    <title>3</title>
 </head>
 <body>
+    <script>
+        function goBack() {
+            location.href = 'phase3.php';
+        }
+    </script>
+    <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>
     <div class="search">
         <form method="get" action="number3.php">
             <input type="text" name="search" placeholder="User x">

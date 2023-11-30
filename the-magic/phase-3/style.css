@@ -7,3 +7,17 @@
 li{
     border-bottom: 1px solid black;
 }
+
+.back{
+    display: inline-block;
+    width: 40vw;
+    padding-bottom: 50px;
+}
+ul{
+    display: inline;
+    padding-top: 50px;
+}
+
+button, input[type="submit"]{
+    cursor: pointer;
+}
