@@ -27,7 +27,7 @@ $mysqli->close();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number 11</title>
+    <title>Number 10</title>
 </head>
 <body>
     <script>
@@ -37,6 +37,7 @@ $mysqli->close();
     </script>
     <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>
     <h1>Pair that always give each other "excellent" reviews for every item they posted</h1>
+    <h1>10) Pair that always give each other "excellent" reviews for every item they posted</h1>
     <ul>
         <?php foreach ($userPairs as $pair): ?>
             <li><?= $pair['userA']; ?> and <?= $pair['userB']; ?></li>
