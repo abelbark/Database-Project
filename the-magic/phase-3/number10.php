@@ -30,6 +30,12 @@ $mysqli->close();
     <title>Number 11</title>
 </head>
 <body>
+    <script>
+        function goBack() {
+            location.href = 'phase3.php';
+        }
+    </script>
+    <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>
     <h1>Pair that always give each other "excellent" reviews for every item they posted</h1>
     <ul>
         <?php foreach ($userPairs as $pair): ?>

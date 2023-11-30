@@ -33,13 +33,13 @@
     <title>8</title>
 </head>
 <body>
-    <h1>8) Users who posted some reviews but each of them is "poor"</h1>
     <script>
         function goBack() {
             location.href = 'phase3.php';
         }
     </script>
-    <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>
+    <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>\
+    <h1>8) Users who posted some reviews but each of them is "poor"</h1>
     <ul>
         <?php  foreach($users as $user): ?>
             <li><?= $user['username']; ?></li>

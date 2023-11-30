@@ -36,13 +36,13 @@
     <title>9</title>
 </head>
 <body>
-    <h1>9) Users who have posted items that havent recieved a "poor" review</h1>
     <script>
         function goBack() {
             location.href = 'phase3.php';
         }
     </script>
     <div class="back"><button onclick="goBack()"><i class='bx bx-arrow-back'> Back to Phase3</i></button></div>
+    <h1>9) Users who have posted items that havent recieved a "poor" review</h1>
     <ul>
         <?php  foreach($users as $user): ?>
             <li><?= $user['username']; ?></li>
