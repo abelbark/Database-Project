@@ -1,7 +1,6 @@
-This is Phase II for group 15, Rodolfo Rivera, Abel Abarca, Jose Flores.
-For phase II contributions:
-Rodolfo Rivera - Initialize Database, Search functionality, recorded and uploaded demo video.
-Abel Abarca - Insert item functionality.
-Jose Flores - Review functionality.
+This is Phase III for group 15, Rodolfo Rivera, Abel Abarca.
+For phase III contributions:
+Rodolfo Rivera - Phase 3 landing page, excercises 1-5, demo video.
+Abel Abarca - excercises 5-10.
 
-Video link: https://www.youtube.com/watch?v=Le8kX-pHLVE&ab_channel=Rodolfo
+Video link: https://youtu.be/ZjGhnqXsJnI
