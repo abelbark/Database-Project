@@ -1,6 +1,6 @@
-This is Phase III for group 15, Rodolfo Rivera, Abel Abarca.
+This is Phase III for group 15, Rodolfo Rivera, Abel Abarca, Jose Flores.
 For phase III contributions:
 Rodolfo Rivera - Phase 3 landing page, excercises 1-5, demo video.
 Abel Abarca - excercises 5-10.
-
+Jose Flores - 1-10 different DB used
 Video link: https://youtu.be/ZjGhnqXsJnI
